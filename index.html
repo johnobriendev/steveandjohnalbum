@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starter</title>
+    <!-- font- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css" />
+    
+    <!--Font Awesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="player" id="audio-player-container">
+        <h1>Steve and John's Album</h1>
+        
+        <div class="song" id="asm-row">
+          <p id="amn-play">Ask Me Now</p>
+          <p>7:38</p>
+          <audio id="amn-song" preload="metadata">
+            <source src="Ask Me Now remaster.wav" type="audio/wav">
+          </audio>
+        </div>
+
+        <div class="song">
+          <p id="bas-play">Body and Soul</p>
+          <p>3:47</p>
+          <audio id="bas-song" preload="metadata">
+            <source src="Body and Soul (in F) remaster.wav" type="audio/wav">
+          </audio>
+        </div>
+
+        <div class="song">
+          <p id="lcsc-play">Loud Cloud Soft Cloud</p>
+          <p>5:56</p>
+          <audio id="lcsc-song" preload="metadata">
+            <source src="Loud Cloud, Soft Cloud remaster.wav" type="audio/wav">
+          </audio>
+        </div>
+
+        <div class="song">
+          <p id="mi-play">My Ideal</p>
+          <p>6:57</p>
+          <audio id="mi-song" preload="metadata">
+            <source src="My Ideal remaster.wav" type="audio/wav">
+          </audio>
+        </div>
+
+        <div class="song">
+          <p id="sitc-play">Send in the Clowns</p>
+          <p>4:42</p>
+          <audio id="sitc-song" preload="metadata" >
+            <source src="Send in the Clowns remaster.wav" type="audio/wav">
+          </audio>
+        </div>
+
+        <div class="song">
+          <p id="wafimb-play">What a Feeling it Must Be</p>
+          <p>3:09</p>
+          <audio id="wafimb-song" preload="metadata">
+            <source src="What a Feeling it Must Be remaster.wav" type="audio/wav">
+          </audio>
+        </div>
+       
+        <div class="bar">
+         <span id="current-time">0:00</span>
+          <input type="range" value="0" id="progress">
+         <span id="duration">0:00</span>
+        </div>
+       
+        <div class="controls">
+          <i class="fa-solid fa-backward-step" id="back"></i>
+          <i class="fa-solid fa-play" id="ctrl"></i>
+          <i class="fa-solid fa-forward-step" id="forward"></i>
+        </div>
+      </div>
+    </div>
+    <!-- javascript -->
+    <script src="app.js"></script>
+  </body>
+</html>

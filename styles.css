@@ -1,0 +1,176 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+
+.page{
+  
+  background: url(Yutah.jpg) no-repeat;
+  background-size:100% 100%;
+
+  height: 100vh;
+  width:100%;
+
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player{
+  position:relative;
+  bottom:120px;
+
+  
+  height: 500px;
+  width:550px;
+  background-color: transparent;
+  border:white .5px solid;
+  border-radius: 10px;
+  
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding:40px;
+  
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.07), 0 16px 32px rgba(0,0,0,0.07), 0 32px 64px rgba(0,0,0,0.07);
+  
+}
+
+h1{
+  color:white;
+  font-weight: 100;
+  font-size:2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.song{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:5px 20px;
+}
+p{
+  color:white;
+  font-size:1.2rem;
+  font-weight:100;
+  transition:.3s;
+  z-index: 1;
+}
+p:hover{
+  transform:scale(1.05);
+  cursor:pointer;
+}
+.song-playing{
+  transform:scale(1.075);
+}
+.song-playing p{
+  font-weight: 500;;
+}
+.bar{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}
+span{
+  margin-top:50px;
+  color:white;
+}
+#progress{
+  -webkit-appearance: none;
+  height:2px;
+  margin-top:50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width:300px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#progress::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  background:white;
+  width:10px;
+  height:10px;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+.controls{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width:70%;
+  margin-top:50px
+ 
+}
+.controls i{
+  color:white;
+  font-size: 1.5rem;
+  background: transparent;
+  cursor:pointer;
+}
+.controls i:nth-child(2){
+  transform:scale(1.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width: 480px) {
+
+  .page{
+  
+    background: url(Yutah.jpg) no-repeat;
+    background-position: 50% 60%;
+    height: 100vh;
+    width:100%;
+    
+  
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .player{
+    position:relative;
+    bottom:70px;
+    
+    
+    height: 500px;
+    width:350px;
+    background-color: transparent;
+    border:white .5px solid;
+    border-radius: 10px;
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    padding:40px;
+    
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.07), 0 16px 32px rgba(0,0,0,0.07), 0 32px 64px rgba(0,0,0,0.07);
+    
+  }
+  #progress{
+    width: 200px;
+  }
+  
+ }
