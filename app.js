@@ -214,7 +214,7 @@ let userStartedPlayback = false;
 ctrl.addEventListener("click", function () {
     if (!userStartedPlayback) {
         // If the user hasn't manually started playback yet, play the first song
-        playSong(amnSong);
+        playSong(wafimbSong);
         userStartedPlayback = true;
     } else {
         // If the user has manually started playback, toggle between play and pause
