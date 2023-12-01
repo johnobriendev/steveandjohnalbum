@@ -73,10 +73,10 @@ function playSong(songElement){
         progress.max = Math.floor(currentSong.duration);
       }
     ///////////for the buffered amount to be shown//////
-    const displayBufferedAmount = () => {
-        const bufferedAmount = Math.floor(currentSong.buffered.end(currentSong.buffered.length - 1));
-        audioPlayerContainer.style.setProperty('--buffered-width', `${(bufferedAmount / progress.max) * 100}%`);
-     }
+   // const displayBufferedAmount = () => {
+   //     const bufferedAmount = Math.floor(currentSong.buffered.end(currentSong.buffered.length - 1));
+   //     audioPlayerContainer.style.setProperty('--buffered-width', `${(bufferedAmount / progress.max) * 100}%`);
+ //    }
 
      ////////////
     //  const whilePlaying = () => {
@@ -88,17 +88,17 @@ function playSong(songElement){
       if (currentSong.readyState > 0) {
         displayDuration();
         setProgressMax();
-        displayBufferedAmount();
+       // displayBufferedAmount();
       } else {
         currentSong.addEventListener('loadedmetadata', () => {
           displayDuration();
           setProgressMax();
-          displayBufferedAmount();
+        //  displayBufferedAmount();
         });
       }
     
       ////displays the buffered amount when the current song progresses
-      currentSong.addEventListener('progress', displayBufferedAmount);
+    //  currentSong.addEventListener('progress', displayBufferedAmount);
 
     
       //////this changes the time on the left to the value of the slider bar///////////
@@ -126,12 +126,12 @@ function playSong(songElement){
 
    //time bar for changing the song when you click on certain time on the bar/////
    ////every 500ms it sets the slider value to the songs current time and the time on the left to the slider value//
-    if(currentSong.play()){
-        setInterval(()=>{
-            progress.value = currentSong.currentTime;
-            timeContainer.textContent = calculateTime(progress.value);
-        },500);
-    }
+    // if(currentSong.play()){
+    //     setInterval(()=>{
+    //         progress.value = currentSong.currentTime;
+    //         timeContainer.textContent = calculateTime(progress.value);
+    //     },500);
+    // }
 
     //////this is so when you click somewhere on the slider the song plays from where you click////
     progress.onchange = function(){
