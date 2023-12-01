@@ -72,40 +72,19 @@ function playSong(songElement){
     const setProgressMax = () => {
         progress.max = Math.floor(currentSong.duration);
       }
-    ///////////for the buffered amount to be shown//////
-   // const displayBufferedAmount = () => {
-   //     const bufferedAmount = Math.floor(currentSong.buffered.end(currentSong.buffered.length - 1));
-   //     audioPlayerContainer.style.setProperty('--buffered-width', `${(bufferedAmount / progress.max) * 100}%`);
- //    }
-
-     ////////////
-    //  const whilePlaying = () => {
-    //     progress.value = Math.floor(currentSong.currentTime);
-    //     timeContainer.textContent = calculateTime(progress.value);
-    //     audioPlayerContainer.style.setProperty('--seek-before-width', `${progress.value / progress.max * 100}%`);
-    // }
+   
     //////helps with loading the metadata-time to right of bar, max length of bar, and buffer amount///////
       if (currentSong.readyState > 0) {
         displayDuration();
         setProgressMax();
-       // displayBufferedAmount();
       } else {
         currentSong.addEventListener('loadedmetadata', () => {
           displayDuration();
           setProgressMax();
-        //  displayBufferedAmount();
         });
       }
     
-      ////displays the buffered amount when the current song progresses
-    //  currentSong.addEventListener('progress', displayBufferedAmount);
-
     
-      //////this changes the time on the left to the value of the slider bar///////////
-      progress.addEventListener('input', () => {
-        timeContainer.textContent = calculateTime(progress.value);
-      });
-      
 
     ///////plays the song and changes the play button to show pause
     currentSong.play();
@@ -113,25 +92,13 @@ function playSong(songElement){
     ctrl.classList.remove("fa-play");
     userStartedPlayback = true;
     
-    // /////this function stops the audio from playing rapidly in time with the sliders movements////
-    //  progress.addEventListener('change', () => {
-    //     currentSong.currentTime = progress.value;
-    //   }); 
 
-    //////this sets the sliders value to the songs current time/////
+    //////this sets the sliders value to the songs current time and changes the time on the left/////
       currentSong.addEventListener('timeupdate', () => {
         progress.value = Math.floor(currentSong.currentTime);
+        timeContainer.textContent = calculateTime(progress.value);
       });
 
-
-   //time bar for changing the song when you click on certain time on the bar/////
-   ////every 500ms it sets the slider value to the songs current time and the time on the left to the slider value//
-    // if(currentSong.play()){
-    //     setInterval(()=>{
-    //         progress.value = currentSong.currentTime;
-    //         timeContainer.textContent = calculateTime(progress.value);
-    //     },500);
-    // }
 
     //////this is so when you click somewhere on the slider the song plays from where you click////
     progress.onchange = function(){
@@ -170,7 +137,7 @@ function pauseOrPlay() {
     }
 }
 
-
+///////////////////////////////////////////
 //////function for next song button////////
 function playNextSong() {
     
@@ -186,7 +153,7 @@ function playPreviousSong() {
 
 
 
-
+////////////////////////////////////////////////////////////////////////////
 //////event listeners to play songs by clicking on them///////////////////
 amnPlay.addEventListener("click", function () {
     playSong(amnSong);
@@ -206,9 +173,10 @@ sitcPlay.addEventListener("click", function () {
 wafimbPlay.addEventListener("click", function () {
     playSong(wafimbSong);
 });
+
 ////////////////play pause controls/////////////////
 
-///this function checks to see if someone has pressed play yet, if not, it plays the first song...if something is already playing it acts as a regular play/pause
+///this function checks to see if a song has been played yet, if not, it plays the first song...if something is already playing it acts as a regular play/pause
 let userStartedPlayback = false;
 
 ctrl.addEventListener("click", function () {
