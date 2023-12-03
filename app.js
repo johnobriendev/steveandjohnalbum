@@ -23,12 +23,14 @@ let forwardBtn = document.getElementById("forward");
 let ctrl = document.getElementById("ctrl");
 
 let songs = [
-    amnSong,
-    basSong,
-    lcscSong,
-    miSong,
-    sitcSong,
     wafimbSong,
+    amnSong,
+    sitcSong,
+    basSong,
+    miSong,
+    lcscSong,
+    
+    
 ];
 
 let currentSongIndex= 0;
